@@ -1,0 +1,14 @@
+body{
+  margin: 0px;
+  background-image: url("img/bgblack.jpg");
+  /*filter: blur(5px);*/
+  /*overflow: scroll;*/
+}
+
+.modal{
+  /*overflow: visible;*/
+}
+
+.modal-header{
+  overflow: hidden;
+}
