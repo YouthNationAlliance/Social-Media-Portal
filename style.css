@@ -1,12 +1,18 @@
+html{
+  overflow-y: scroll;
+}
+
 body{
   margin: 0px;
+  padding: 0 !important;
   background-image: url("img/bgblack.jpg");
   /*filter: blur(5px);*/
-  /*overflow: scroll;*/
 }
 
 .modal{
-  /*overflow: visible;*/
+  width: 50%;
+  max-height: 100% !important;
+  overflow: visible;
 }
 
 .modal-header{
