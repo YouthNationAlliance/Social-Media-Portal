@@ -2,7 +2,7 @@ html {
   overflow-y: scroll;
 }
 
-a {
+a, a:hover {
 	color: white;
 }
 
@@ -53,20 +53,8 @@ img {
 	margin-top: 20px;
 	border: 0.5px solid;
 	padding: 10px;
-	
+
 	margin-bottom: 50px;
-}
-
-.btn-block:hover {
-	cursor:pointer;
-	opacity: 0.9;
-	box-shadow: inset 0 0 0 2em var(--hover);
-	box-shadow: 2px 5px 5px #a09fa5;
-}
-
-.btn-block:hover, .btn-block:focus {
-	box-shadow: inset 0 0 0 2em var(--hover);
-	box-shadow: 2px 5px 5px #a09fa5;
 }
 
 .overlay {
@@ -93,21 +81,8 @@ img {
   box-shadow: 2px -1px 1px 3px #4f5660;
 }
 
-.modal-header:hover .overlay {
-	opacity: 1px;
-}
-
 span.socialbutton {
 	display: none;
-}
-
-span.socialbutton:hover {
-	cursor: pointer;
-	opacity: 0.9;
-	box-shadow: 3px 3px 3px #222;
-	-ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
 }
 
 .text {
@@ -125,6 +100,7 @@ span.socialbutton:hover {
 	max-width: 100%;
 	margin-left: -10px;
 	margin-right: 70px;
+  margin: 0;
 }
 
 .modal-content .about {
@@ -145,29 +121,14 @@ span.socialbutton:hover {
 	margin-top: 20px;
 }
 
-.globe:hover {
-	opacity: 0.7;
-	text-shadow: 5px 5px 5px #a09fa5;
-}
-
 .facebook {
 	color: #2e4ec1;
 	opacity: 1.0;
 }
 
-.facebook:hover {
-	opacity: 0.7;
-	text-shadow: 5px 5px 5px #a09fa5;
-}
-
 .instagram {
 	color: #f4427a;
 	opacity: 1.0;
-}
-
-.instagram:hover {
-	opacity: 0.7;
-	text-shadow: 5px 5px 5px #a09fa5;
 }
 
 .icon1 {
@@ -206,14 +167,6 @@ ul.icons {
 					text-align: center;
 					width: 2.25rem;
 				}
-
-					ul.icons li a:hover {
-						background-color: rgba(255, 255, 255, 0.075);
-					}
-
-					ul.icons li a:active {
-						background-color: rgba(255, 255, 255, 0.175);
-					}
 
 /*
 .modal-body ul.links {
@@ -323,8 +276,8 @@ i {
 
 .modal-header {
 	overflow: hidden;
+  padding: 0;
 }
-
 
 /* Start of media queries */
 
@@ -497,7 +450,7 @@ i {
 	.btn-block {
 		margin-left: -90px;
 	}
-} 
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 580px) and (max-width: 600px) {
@@ -534,7 +487,7 @@ i {
 	.btn-block {
 		margin-left: -105px;
 	}
-} 
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 640px) {
@@ -675,7 +628,7 @@ i {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
-} 
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
