@@ -1,5 +1,5 @@
 html {
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 a, a:hover {
@@ -25,7 +25,66 @@ img {
   filter: drop-shadow(5px 5px 5px #222);
 }
 
+/* Loading page animation */
+#loader {
+	/* position: absolute; */
+	left: 52%;
+	top: 50%;
+	z-index: 1;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #3498db;
+	width: 120px;
+	height: 120px;
+	margin-top: 50px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+	display: none;
+}
+
 #modal1 {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#sharingmodal {
 	max-width: 100%;
 	max-height: 100%;
 }
@@ -33,11 +92,16 @@ img {
 .modal-header {
 	max-width: 100%;
 	max-height: 100%;
+	background-color: white;
 }
 
 .modal-content {
 	background-color: rgb(79, 46, 134);
 	padding: 100px;
+}
+
+.bar {
+	padding-top: 10px;
 }
 
 .btn-block {
@@ -68,7 +132,6 @@ img {
 	box-shadow: 2px 5px 5px #a09fa5;
 	margin-bottom: 50px;
 }
-
 
 .overlay {
 	position: absolute;
@@ -115,6 +178,20 @@ span.socialbutton:hover {
 	margin-left: auto;
 	transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
+}
+
+#logo {
+	/* position: absolute; */
+	width: 250px;
+	height: 250px;
+	margin-left: 600px;
+	margin-top: 50px;
+	width: auto;
+	max-width: 100%;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #header {
@@ -169,120 +246,33 @@ span.socialbutton:hover {
 }
 
 .icon1 {
-	margin-left: 10px;
+	margin-left: 8.5px;
 }
 
 .icon2 {
-	margin-left: 15px;
+	margin-left: 12px;
 }
 
 .icon3 {
-	margin-left: 11px;
+	margin-left: 8px;
 }
 
-ul.icons {
-			cursor: default;
-			list-style: none;
-			padding-left: 0;
-		}
-
-			ul.icons li {
-				/*display: inline-block;*/
-				padding: 0 0.75em 0 0;
-			}
-
-				ul.icons li:last-child {
-					padding-right: 0;
-				}
-
-				ul.icons li a {
-					border-radius: 100%;
-					shadow: inset 0 0 0 1px #ffffff;
-					/*display: inline-block;*/
-					height: 2.25rem;
-					line-height: 2.25rem;
-					text-align: center;
-					width: 2.25rem;
-				}
-
-/*
-.modal-body ul.links {
-	cursor: default;
-	list-style: none;
-	padding-left: 0px;
+.icon4 {
+	margin-left: -102px;
 }
 
-.modal-body ul.links li {
-	padding: 0 0.75em 0 0;
+.icon5 {
+	margin-left: -103px;
 }
 
-.modal-body ul.links li:last-child {
-	padding-right: 0px;
+.icon6 {
+	margin-left: -105px;
 }
-*/
 
-/*
-.modal-body ul.links li a {
-	border: 1px solid grey;
-	border-radius: 100%;
-	box-shadow: inset 0 0 0 1px #ffffff;
-	height: 2.5rem;
-	line-height: 2.5rem;
+h3.modal-title {
+	margin-left: 80px;
 	text-align: center;
-	width: 2.5rem;
 }
-*/
-
-/*
-#globe {
-	border-radius: 100%;
-	border: 1px grey;
-	box-shadow: inset 0 0 0 1px #ffffff;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	width: 2.5rem;
-	background-color: grey;
-	text-align: center;
-	vertical-align middle;
-	padding: 10px;
-}
-
-#facebook {
-	border-radius: 100%;
-	border: 1px grey;
-	box-shadow: inset 0 0 0 1px #ffffff;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	width: 2.5rem;
-	background-color: blue;
-	text-align: center;
-	vertical-align middle;
-	padding: 30px;
-}
-
-#instagram {
-	border-radius: 100%;
-	border: 1px grey;
-	box-shadow: inset 0 0 0 1px #ffffff;
-	height: 2.5rem;
-	line-height: 2.5rem;
-	width: 2.5rem;
-	background-color: pink;
-	text-align: center;
-	vertical-align middle;
-	padding: 30px;
-}
-*/
-
-/*
-.modal-body ul.links li a:hover {
-	background-color: rgba(255, 255, 255, 0.075);
-}
-
-.modal-body ul.links li a:active {
-	background-color: rgba(255, 255, 255, 0.175);
-}
-*/
 
 h4 {
 	font-size: 26px;
@@ -311,29 +301,197 @@ i {
 	margin-right: 20px;
 }
 
-.modal-header {
+#modal1 .modal-header {
 	overflow: hidden;
 	padding: 0;
 }
 
-/* Start of media queries */
 
+/* Start of social media sharing animation */
+	.image-effect-circle{
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      margin-left: -25px;
+      background-color: rgba(0,0,0,0.2);
+    }
+
+
+    .image-effect-circle img{
+      position: absolute;
+      left: 0;
+      top:0;
+
+      -webkit-transition: 0.4s 1s;
+      transition: 0.4s 1s;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    .image-effect-circle:hover img{
+      -webkit-filter: blur(1px) saturate(2.5);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+
+
+    .image-effect-circle .share-layer{
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      left:50px;
+      top:300px;
+      position: absolute;
+      background-color: rgba(255,255,255, 0.8);
+      -webkit-transition: 0.4s 1s;
+      transition: 0.4s 1s;
+      z-index: 1;
+    }
+
+    .image-effect-circle:hover .share-layer{
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+      transform: translateY(-350px);
+      -webkit-transform: translateY(-350px);
+    }
+
+
+    .image-effect-circle .share-button {
+      position: absolute;
+      display: block;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+
+      text-decoration: none;
+      color: #ffffff;
+      line-height: 70px;
+      font-size: 32px;
+      text-align: center;
+
+      left: 50%;
+      margin-left: -25px;
+      top: 50%;
+      margin-top: -25px;
+      opacity: 0;
+    }
+
+    .image-effect-circle .share-via-facebook{
+      -webkit-transition: 0.4s 0.6s;
+      transition: 0.4s 0.6s;
+      background-color:#3b5998;
+    }
+
+    .image-effect-circle .share-via-twitter{
+      -webkit-transition: 0.4s 0.4s;
+      transition: 0.4s 0.4s;
+      background-color:#00aced;
+    }
+
+    .image-effect-circle .share-via-google{
+      -webkit-transition: 0.4s 0.2s;
+      transition: 0.4s 0.2s;
+      background-color:#d34836;
+    }
+
+    .image-effect-circle:hover .share-via-facebook {
+      -webkit-transition: 0.4s 0.4s;
+      transition: 0.4s 0.4s;
+
+      -webkit-transform: translate(-80px, -60px);
+      transform: translate(-80px, -60px);
+
+      opacity: 1;
+    }
+
+    .image-effect-circle:hover .share-via-twitter {
+      -webkit-transition: 0.4s 0.6s;
+      transition: 0.4s 0.6s;
+
+      -webkit-transform: translate(80px, -60px);
+      transform: translate(80px, -60px);
+
+      opacity: 1;
+    }
+
+    .image-effect-circle:hover .share-via-google {
+      -webkit-transition: 0.4s 0.8s;
+      transition: 0.4s 0.8s;
+
+      -webkit-transform: translate(0, 60px);
+      transform: translate(0, 60px);
+
+      opacity: 1;
+    }
+/* End of social media sharing animation */
+
+
+span.image-layer {
+	width: 300px;
+	position: absolute;
+	align: right;
+	margin-left: 33px;
+}
+
+
+/* Start of media queries */
+/* TODO: Implement media queries for mobile devices, loading screen, and sharing modal */
 @-ms-viewport {
 	width: device-width;
 }
 
 @media only screen and (min-width: 400px) and (max-width: 450px) {
-	.modal {
-		overflow-y: auto:
+	.image-effect-circle {
+		margin-left: -70px;
+	}
+
+	span.image-layer {
+		margin-left: 20px;
+	}
+
+	h3.modal-title {
+		margin-left: 25px;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 450px) and (max-width: 500px) {
+	.image-effect-circle {
+		margin-left: -50px;
+	}
+
+	span.image-layer {
+		margin-left: 20px;
+	}
+
+	h3.modal-title {
+		margin-left: 70px;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 400px) and (max-width: 450px) {
+	#modal1 .modal {
+		overflow-y: auto;
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
-		overflow-y: auto:
+	#modal1 .modal-content {
+		overflow-y: auto;
 		max-height: 300px;
 		max-width: 500px;
+	}
+
+	#sharingmodal {
+		overflow-y: auto;
+		position: relative;
+		max-height: 400px;
+		max-width: 100%;
 	}
 
 	h4 {
@@ -366,14 +524,14 @@ i {
 }
 
 @media only screen and (min-width: 450px) and (max-width: 500px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -408,14 +566,14 @@ i {
 }
 
 @media only screen and (min-width: 500px) and (max-width: 550px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -452,14 +610,14 @@ i {
 }
 
 @media only screen and (min-width: 550px) and (max-width: 580px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -469,7 +627,6 @@ i {
 		position: relative;
 		padding-left: 90px;
 		text-align: center;
-
 	}
 
 	h5 {
@@ -477,10 +634,9 @@ i {
 		text-align: center;
 		text-align-last: initial;
 		margin-left: 1px;
-
 	}
 
-	.modal-body {
+	#modal1 .modal-body {
 		margin-left: -30px;
 	}
 
@@ -491,14 +647,14 @@ i {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 580px) and (max-width: 600px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -517,7 +673,7 @@ i {
 		margin-left: 1px;
 	}
 
-	.modal-body {
+	#modal1 .modal-body {
 		margin-left: -30px;
 	}
 
@@ -528,14 +684,14 @@ i {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 640px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -553,7 +709,7 @@ i {
 		text-align-last: initial;
 	}
 
-	.modal-body {
+	#modal1 .modal-body {
 		margin-left: -30px;
 	}
 
@@ -563,14 +719,14 @@ i {
 }
 
 @media only screen and (min-width: 640px) and (max-width: 670px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -589,7 +745,7 @@ i {
 		padding-left: 20px;
 	}
 
-	.modal-body {
+	#modal1 .modal-body {
 		margin-left: -30px;
 	}
 
@@ -599,14 +755,14 @@ i {
 }
 
 @media only screen and (min-width: 670px) and (max-width: 750px) {
-	.modal {
+	#modal1 .modal {
 		overflow-y: auto:
 		position: relative;
 		max-height: 4000px;
 		max-width: 100%;
 	}
 
-	.modal-content {
+	#modal1 .modal-content {
 		overflow-y: auto:
 		max-height: 300px;
 		max-width: 1500px;
@@ -624,7 +780,7 @@ i {
 		text-align-last: initial;
 	}
 
-	.modal-body {
+	#modal1 .modal-body {
 		margin-left: -30px;
 	}
 

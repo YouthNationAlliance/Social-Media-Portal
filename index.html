@@ -1,12 +1,10 @@
-<!-- Based off of this site: http://l.ead.me/bawOIw -->
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Replica of YNA Social Media Page">
+    <meta name="description" content="YNA's Social Media Portal">
     <meta name="keywords" content="YNA, Follow Us, Connecting Youth">
     <meta name="author" content="Eric Liu, Jonathan Xu, Kailas Moon">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/> <!-- Don't let user zoom on the page -->
@@ -30,8 +28,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Link Font Awesome -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen"/>
+
+    <script src="https://use.fontawesome.com/58b9791761.js"></script>
 
     <!-- Below is only for Compatibility with Internet Explorer 9 -->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /> -->
@@ -54,104 +54,111 @@
     <meta property="twitter:card" content="summary">
     <meta name="twitter:image:width" content="200">
     <meta name="twitter:image:height" content="200">
-
   </head>
 
-  <body background="img/bg.png">
-    <div id="modal1" class="modal fade" role="dialog" style="width: 680px;">
-      <div class="modal-header">
-        <img id="header" src="img/modal.png" alt="img/bgpurple.jpg">
-        <!--<div class="overlay">
-          <div class="text">Follow Us!</div>
+  <body onload="myFunction()" background="img/bg.png">
+    <img id="logo" src="img/logo.png"></img>
+    <!-- For Loader -->
+    <div id="loader"></div>
+    <div id="myDiv" class="animate-bottom">
+      <!-- Main modal -->
+      <div id="modal1" class="modal fade" role="dialog" style="width: 680px;">
+        <div class="modal-header">
+          <img id="header" src="img/modal.png" alt="img/bgpurple.jpg">
+          <!--<div class="overlay">
+            <div class="text">Follow Us!</div>
+          </div>
+          -->
         </div>
-        -->
+        <div class="modal-content">
+          <div class="about">
+            <h4>Connect with us on social media</h4>
+          </div>
+          <div class="description">
+            <h5>Follow us and get updates delivered to your favorite social media channel.</h5>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div id="globe" class="bar" onclick="window.open('http://www.ynalliance.ca/');">
+            <a href="http://www.ynalliance.ca/">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x globe"></i>
+                <i class="fa fa-globe fa-stack-1x icon1" style="margin-top: 20px;"></i>
+              </span>
+            </a>
+            <p style="margin-left: 127px; font-size: 16px; margin-top: -30px;">Visit us online</p>
+            <p style="margin-left: 130px; line-height: 0px; font-size: 14px; margin-top: -10px;">www.ynalliance.ca</p>
+          </div>
+          <br>
+          <div id="facebook" class="bar" onclick="window.open('https://www.facebook.com/teamyna');">
+            <a href="https://www.facebook.com/teamyna">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x facebook"></i>
+                <i class="fa fa-facebook fa-stack-1x icon2"></i>
+              </span>
+            </a>
+            <p style="margin-top: -47px; font-size: 16px; margin-left: 130px">Facebook</p>
+            <p style="margin-top: -10px; line-height: 0px; font-size: 14px; margin-left: 130px">@teamyna</p>
+          </div>
+          <br>
+          <div id="instagram" class="bar"  onclick="window.open('https://www.instagram.com/teamyna/');">
+            <a href="https://www.instagram.com/teamyna/">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x instagram"></i>
+                <i class="fa fa-instagram fa-stack-1x icon3"></i>
+              </span>
+            </a>
+            <p style="margin-top: -47px; font-size: 16px; margin-left: 130px">Instagram</p>
+            <p style="margin-top: -10px; line-height: 0px; font-size: 14px; margin-left: 130px">@teamyna</p>
+          </div>
+        </div>
+        <div class="modal-footer" id="share_button">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn-block" id="btn" data-toggle="modal" data-target="sharingmodal"><i class="fa fa-share-alt"></i>SHARE THIS PAGE</button>
+          <!-- Collapsed button trigger modal -->
+          <span class="socialbutton" id="btn1" data-toggle="modal" data-target="sharingmodal">
+            <img src="img/collapsed-sharebutton.jpg"></img>
+          </span>
+        </div>
       </div>
-      <div class="modal-content">
-        <div class="about">
-          <h4>Connect with us on social media</h4>
-        </div>
-        <div class="description">
-          <h5>Follow us and get updates delivered to your favorite social media channel.</h5>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div id="globe">
-          <a href="http://www.ynalliance.ca/">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x globe"></i>
-              <i class="fas fa-globe fa-stack-1x icon1" style="margin-top: 20px;"></i>
-            </span>
-          </a>
-          <p style="margin-left: 127px; font-size: 16px; margin-top: -30px;">Visit us online</p>
-          <p style="margin-left: 130px; line-height: 0px; font-size: 14px; margin-top: -10px;">www.ynalliance.ca</p>
-        </div>
-        <br>
-        <div id="facebook">
-          <a href="https://www.facebook.com/teamyna">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x facebook"></i>
-              <i class="fab fa-facebook-f fa-stack-1x icon2"></i>
-            </span>
-          </a>
-          <p style="margin-top: -47px; font-size: 16px; margin-left: 130px">Facebook</p>
-          <p style="margin-top: -10px; line-height: 0px; font-size: 14px; margin-left: 130px">@teamyna</p>
-        </div>
-        <br>
-        <div id="instagram">
-          <a href="https://www.instagram.com/teamyna/">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x instagram"></i>
-              <i class="fab fa-instagram fa-stack-1x icon3"></i>
-            </span>
-          </a>
-          <p style="margin-top: -47px; font-size: 16px; margin-left: 130px">Instagram</p>
-          <p style="margin-top: -10px; line-height: 0px; font-size: 14px; margin-left: 130px">@teamyna</p>
-        </div>
-      </div>
-      <div class="modal-footer" id="share_button">
-        <!-- TODO: Still need to put another modal here for the social media sharing-->
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn-btn-secondary" data-toggle="modal" data-target="sharingmodal">SHARE THIS PAGE</button> -->
 
-        <button type="button" class="btn-block" onclick="sharePage()"><i class="fas fa-share-alt"></i>SHARE THIS PAGE</button>
-        <span class="socialbutton">
-          <img src="img/collapsed-sharebutton.jpg"></img>
-        </span>
-      </div>
-
-    <!-- Sharing Modal -->
-    <!--
-        <div class="modal fade" id="sharingmodal" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="model-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="sharingmodallabel">Share page</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+      <!-- Sharing Social Media Modal -->
+      <div id="sharingmodal" class="modal fade" style="width: 680px;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Share Page</h3>
+              <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body">
+              <!-- Add social media sharing page links here -->
+              <div class="container">
+                <div class="image-effect-circle">
+                  <span class="image-layer">
+                    <img src="img/logo.png">
+                  </span>
+                    <div class="share-layer">
+                      <a href="https://www.facebook.com/teamyna" class="share-button share-via-facebook">
+                        <i class="fa fa-facebook icon4"></i>
+                      </a>
+                      <a href="#" class="share-button share-via-twitter">
+                        <i class="fa fa-twitter icon5"></i>
+                      </a>
+                      <a href="#" class="share-button share-via-google">
+                        <i class="fa fa-google icon6"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-            -->
-              <!-- Add social media sharing links here -->
-              <!--
-              <div class="modal-body">
-              </div>
-              <div class="modal-footer">
-              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
-      -->
-
-    <!--
-    <script>
-      document.getElementById("share_button").addEventListener("click", sharePage);
-
-      function sharePage() {
-        document.getElementById("share_button").innerHTML = "HELLO!";
-      }
-    </script>
-    -->
-
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
